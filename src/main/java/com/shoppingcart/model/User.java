@@ -49,36 +49,17 @@ public class User {
 	@Column(nullable = false)
 	private String password;
 	
-	
-	
-   
+	 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
-    private Set<Role> roles;
+    	private Set<Role> roles;
 	
-	
-	
-	
-//	 @OneToOne(fetch = FetchType.LAZY)
-//	 @JoinColumn(name = "cart_id", referencedColumnName = "id")
-//	 private Carts cart; 
-	
-	
-	//Cha
-//	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true )
-//	@OneToOne(mappedBy = "user", orphanRemoval = true )
-//	private Carts cart; 
 
-	
-	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true )
 	private Set<Carts> carts = new HashSet<>();
 
-	
-	
-	
-	
+
 }
