@@ -217,44 +217,44 @@ public class LineItemServiceImpl implements LineItemService {
 
 
 	//convert entity to Dto
-			private ProductDto mapToDto(Product product) {
-				
-				ProductDto productDto = new ProductDto();
-				
-				productDto.setId(product.getId());
-				productDto.setAdded_on(product.getAdded_on());
-				
-				
-				productDto.setCategoryId(product.getCategory().getId());
-				
-				
-				productDto.setPrice(product.getPrice());
-				productDto.setName(product.getName());
-				
-				
+	private ProductDto mapToDto(Product product) {
 
-				return productDto;
-			}
-			
-			
-			private ProductDtoInCart mapToDtoInCart(Product product) {
-				
-				ProductDtoInCart productDtoInCart = new ProductDtoInCart();
-				
-				productDtoInCart.setId(product.getId());
-				productDtoInCart.setAdded_on(product.getAdded_on());
-				
-				
-				productDtoInCart.setCategoryId(product.getCategory().getId());
-				
-				
-				productDtoInCart.setPrice(product.getPrice());
-				productDtoInCart.setName(product.getName());
-				
-				
+		ProductDto productDto = new ProductDto();
 
-				return productDtoInCart;
-			}
+		productDto.setId(product.getId());
+		productDto.setAdded_on(product.getAdded_on());
+
+
+		productDto.setCategoryId(product.getCategory().getId());
+
+
+		productDto.setPrice(product.getPrice());
+		productDto.setName(product.getName());
+
+
+
+		return productDto;
+	}
+
+
+	private ProductDtoInCart mapToDtoInCart(Product product) {
+
+		ProductDtoInCart productDtoInCart = new ProductDtoInCart();
+
+		productDtoInCart.setId(product.getId());
+		productDtoInCart.setAdded_on(product.getAdded_on());
+
+
+		productDtoInCart.setCategoryId(product.getCategory().getId());
+
+
+		productDtoInCart.setPrice(product.getPrice());
+		productDtoInCart.setName(product.getName());
+
+
+
+		return productDtoInCart;
+	}
 
 
 }
