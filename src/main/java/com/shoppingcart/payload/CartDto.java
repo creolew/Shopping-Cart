@@ -11,5 +11,4 @@ public class CartDto {
 	
 	private Long userId;
 	
-	//private LineItem lineItem; 
 }
