@@ -32,8 +32,6 @@ public class LineItemServiceImpl implements LineItemService {
 	private ProductRepository productRepository;
 	
 	private CartRepository cartRepository;
-	
-	
 
 	public LineItemServiceImpl(LineItemRepository lineItemRepository,
 			ProductRepository productRepository, CartRepository cartRepository) {
@@ -41,10 +39,6 @@ public class LineItemServiceImpl implements LineItemService {
 		this.productRepository = productRepository;
 		this.cartRepository = cartRepository;
 	}
-
-
-
-
 
 	@Override
 	public LineItemDto createLineItem(LineItemDto lineItemDto, Long cartId, Long productId) {
@@ -150,9 +144,6 @@ public class LineItemServiceImpl implements LineItemService {
 	
 	@Override
 	public LineItemDto updateQuantityInLineItemByCartIdAndProductId(Long cartId, Long productId, LineItemDto lineItemDto) {
-
-		
-		//List<ProductDtoInCart> listProductsInCart = getAllProductsWithCartId(cartId);
 		
 		Carts cart = cartRepository.findById(cartId)
 				  .orElseThrow(
@@ -204,38 +195,22 @@ public class LineItemServiceImpl implements LineItemService {
 		
 	}
 	
-	
-
-
-	
-
-
-	
-	
-//-------------------------------------------------------------------------------
 	//convert entity to Dto
 	private LineItemDto mapToDto(LineItem lineItem) {
 		LineItemDto lineItemDto = new LineItemDto();
 		
 		lineItemDto.setId(lineItem.getId());
 		lineItemDto.setQuantity(lineItem.getQuantity());
-		//lineItemDto.setCart(lineItem.getCart());
-		//lineItemDto.setProduct(lineItem.getProduct());
-		
-		
+
 		return lineItemDto;
 	}
 			
-			//convert Dto to entity
+	//convert Dto to entity
 	private LineItem mapToEntity(LineItemDto lineItemDto) {
 		LineItem lineItem = new LineItem();
 		
 		lineItem.setId(lineItemDto.getId());
 		lineItem.setQuantity(lineItemDto.getQuantity());
-		
-//		lineItem.setCart(lineItemDto.getCart());
-//		lineItem.setProduct(lineItemDto.getProduct());
-
 
 		return lineItem;
 	}
@@ -282,32 +257,4 @@ public class LineItemServiceImpl implements LineItemService {
 			}
 
 
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-		
-
-
-	
-	
-//	private User getUserLoggingIn() {
-//		UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication()
-//                .getPrincipal();
-//		String userEmail = userDetails.getUsername();
-//		User user = userRepository.findByEmail(userEmail).get();
-//		return user;
-//	}
 }
