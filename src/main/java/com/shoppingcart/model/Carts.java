@@ -37,36 +37,12 @@ public class Carts {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	
 
-	//Con
-	// @OneToOne(fetch = FetchType.LAZY) // checked
-	 
-	
-//	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//	 @JoinColumn(name = "user_id", referencedColumnName = "id")
-//	 private User user;
-	 
-	 
-	 
-//	 @OneToOne(orphanRemoval = false)
-//	 @MapsId
-//	 @JoinColumn(name = "user_id")
-//	 private User user;
-	 
 
-	
-	//Con
 	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
 
-	
-//------------------------	
-
-	 
-	 
 	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true )
 	private List<LineItem> cartRela = new ArrayList<LineItem>();
 	
