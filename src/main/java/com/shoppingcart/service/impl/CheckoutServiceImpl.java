@@ -34,10 +34,6 @@ public class CheckoutServiceImpl implements CheckoutService{
 	LineItemRepository lineItemRepository;
 	
 	ProductRepository productRepository;
-	
-
-
-
 
 	public CheckoutServiceImpl(CheckoutRepository checkoutRepository, CartService cartService,
 			CartRepository cartRepository, LineItemRepository lineItemRepository, ProductRepository productRepository) {
@@ -99,9 +95,7 @@ public class CheckoutServiceImpl implements CheckoutService{
 		Checkout checkout = new Checkout();
 		checkout.setTotalPrice(totalPrice);
 		
-		
-		
-		
+	
 		checkoutRepository.save(checkout);
 		
 		//fill field checkout_id in line item
@@ -118,15 +112,9 @@ public class CheckoutServiceImpl implements CheckoutService{
 		checkoutDto.setId(checkout.getId());
 		
 		checkoutDto.setTotalPrice(checkout.getTotalPrice());
-		
-		
-		
-		
-
+	
 		return checkoutDto;
 	}
-
-
 
 	@Override
 	public CheckoutDto getCheckoutById(Long checkoutId) {
@@ -142,8 +130,6 @@ public class CheckoutServiceImpl implements CheckoutService{
 				
 		return checkoutDto;
 	}
-
-
 
 	@Override
 	public CheckoutDto getCheckoutByUserId(Long userId) {
@@ -196,33 +182,6 @@ public class CheckoutServiceImpl implements CheckoutService{
 		return checkoutDto;
 	
 	}
-	
-	
-	
-	
-
-	
-
-
-
-	//-------------------------------------------------------------------------------
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
