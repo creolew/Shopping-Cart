@@ -90,20 +90,20 @@ public class UserServiceImpl implements UserService{
 	}
 				
 	//convert Dto to entity
-		private User mapToEntity(UserDto userDto) {
-			User user = new User();
+	private User mapToEntity(UserDto userDto) {
+		User user = new User();
 
-			user.setId(userDto.getId());
+		user.setId(userDto.getId());
 
-			user.setName(userDto.getName());
+		user.setName(userDto.getName());
 
-			user.setUsername(userDto.getUsername());
+		user.setUsername(userDto.getUsername());
 
-			user.setEmail(userDto.getEmail());
+		user.setEmail(userDto.getEmail());
 
 
 
-			return user;
-		}
+		return user;
+	}
 	
 }
