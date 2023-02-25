@@ -9,7 +9,5 @@ import lombok.Data;
 public class LineItemDto {
 
 	private Long id;
-//	private Carts cart;
-//	private Product product;
 	private int quantity;
 }
