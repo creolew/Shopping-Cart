@@ -72,46 +72,38 @@ public class UserServiceImpl implements UserService{
 
 	
 	//convert entity to Dto
-			private UserDto mapToDto(User user) {
+	private UserDto mapToDto(User user) {
+
+		UserDto userDto = new UserDto();
+
+		userDto.setId(user.getId());
+
+		userDto.setName(user.getName());
+
+		userDto.setUsername(user.getUsername());
+
+		userDto.setEmail(user.getEmail());
+
+
+
+		return userDto;
+	}
 				
-				UserDto userDto = new UserDto();
-				
-				userDto.setId(user.getId());
+	//convert Dto to entity
+		private User mapToEntity(UserDto userDto) {
+			User user = new User();
 
-				userDto.setName(user.getName());
-				
-				userDto.setUsername(user.getUsername());
-				
-				userDto.setEmail(user.getEmail());
-				
-				
+			user.setId(userDto.getId());
 
-				return userDto;
-			}
-				
-			//convert Dto to entity
-				private User mapToEntity(UserDto userDto) {
-					User user = new User();
-					
-					user.setId(userDto.getId());
+			user.setName(userDto.getName());
 
-					user.setName(userDto.getName());
-					
-					user.setUsername(userDto.getUsername());
-					
-					user.setEmail(userDto.getEmail());
-					
+			user.setUsername(userDto.getUsername());
 
-
-					return user;
-				}
+			user.setEmail(userDto.getEmail());
 
 
 
-				
-
-
-
-				
+			return user;
+		}
 	
 }
