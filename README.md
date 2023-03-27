@@ -3,7 +3,7 @@
 I build REAL-TIME REST APIs by developing a Shopping Cart project. <br />
 I will follow the Real-time industry-standard project development approach in this project. <br />
 
-# Tools and Technologies used in this course:
+# Tools and Technologies used in this project:
 Technologies: <br />
   &emsp; Java 17 <br />
   &emsp; Spring Boot <br />
